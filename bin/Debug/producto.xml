@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+<product>
+	<id><![CDATA[4]]></id>
+	<id_manufacturer xlink:href="https://www.topkit.es/api/manufacturers/1"><![CDATA[1]]></id_manufacturer>
+	<id_supplier><![CDATA[0]]></id_supplier>
+	<id_category_default xlink:href="https://www.topkit.es/api/categories/53"><![CDATA[53]]></id_category_default>
+	<new></new>
+	<cache_default_attribute><![CDATA[212]]></cache_default_attribute>
+	<id_default_image xlink:href="https://www.topkit.es/api/images/products/4/121" notFilterable="true"><![CDATA[121]]></id_default_image>
+	<id_default_combination xlink:href="https://www.topkit.es/api/combinations/212" notFilterable="true"><![CDATA[212]]></id_default_combination>
+	<id_tax_rules_group xlink:href="https://www.topkit.es/api/tax_rule_groups/1"><![CDATA[1]]></id_tax_rules_group>
+	<position_in_category notFilterable="true"><![CDATA[21]]></position_in_category>
+	<manufacturer_name notFilterable="true"><![CDATA[TopKit]]></manufacturer_name>
+	<quantity notFilterable="true"><![CDATA[0]]></quantity>
+	<type notFilterable="true"><![CDATA[simple]]></type>
+	<id_shop_default><![CDATA[1]]></id_shop_default>
+	<reference><![CDATA[10AB]]></reference>
+	<supplier_reference></supplier_reference>
+	<location></location>
+	<width><![CDATA[76.000000]]></width>
+	<height><![CDATA[157.000000]]></height>
+	<depth><![CDATA[25.000000]]></depth>
+	<weight><![CDATA[35.000000]]></weight>
+	<quantity_discount><![CDATA[0]]></quantity_discount>
+	<ean13><![CDATA[0]]></ean13>
+	<upc></upc>
+	<cache_is_pack><![CDATA[0]]></cache_is_pack>
+	<cache_has_attachments><![CDATA[0]]></cache_has_attachments>
+	<is_virtual><![CDATA[0]]></is_virtual>
+	<on_sale><![CDATA[0]]></on_sale>
+	<online_only><![CDATA[0]]></online_only>
+	<ecotax><![CDATA[0.000000]]></ecotax>
+	<minimal_quantity><![CDATA[1]]></minimal_quantity>
+	<price><![CDATA[95.041322]]></price>
+	<wholesale_price><![CDATA[0.000000]]></wholesale_price>
+	<unity></unity>
+	<unit_price_ratio><![CDATA[0.000000]]></unit_price_ratio>
+	<additional_shipping_cost><![CDATA[0.00]]></additional_shipping_cost>
+	<customizable><![CDATA[0]]></customizable>
+	<text_fields><![CDATA[0]]></text_fields>
+	<uploadable_files><![CDATA[0]]></uploadable_files>
+	<active><![CDATA[0]]></active>
+	<redirect_type><![CDATA[404]]></redirect_type>
+	<id_product_redirected><![CDATA[0]]></id_product_redirected>
+	<available_for_order><![CDATA[1]]></available_for_order>
+	<available_date><![CDATA[0000-00-00]]></available_date>
+	<condition><![CDATA[new]]></condition>
+	<show_price><![CDATA[1]]></show_price>
+	<indexed><![CDATA[0]]></indexed>
+	<visibility><![CDATA[both]]></visibility>
+	<advanced_stock_management><![CDATA[0]]></advanced_stock_management>
+	<date_add><![CDATA[2014-05-19 17:43:23]]></date_add>
+	<date_upd><![CDATA[2019-06-02 19:51:52]]></date_upd>
+	<pack_stock_type><![CDATA[3]]></pack_stock_type>
+	<meta_description><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[Zapatero de dormitorio serie 10AB. Zapatero con cuatro puertas abatibles con capacidad de 27 pares]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[Zapatero de dormitorio serie 10AB. Zapatero con cuatro puertas abatibles con capacidad de 27 pares]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[Scarpiera 4 battenti. Comprende sistema a doppia bussola, rendendo doppia capacità di stoccaggio. Con calotta del ripiano e base di 30 mm di spessore e porte di 16 mm. Maniglie in metallo, ad alta resistenza parte posteriore completa. Gambe regolabili in ]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[Zapatero de dormitorio serie 10AB. Zapatero con cuatro puertas abatibles con capacidad de 27 pares]]></language></meta_description>
+	<meta_keywords><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[zapatero,zapatero barato,zapatero muy barato]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[zapatero,zapatero barato,zapatero muy barato]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[mobili ausiliari]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[zapatero,zapatero barato,zapatero muy barato]]></language></meta_keywords>
+	<meta_title><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[Mueble Zapatero Sena - TopKit]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[Zapatero barato de dormitorio serie 10AB - TopKit]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[Scarpiera Adigio  10AB 4 porte battenti ]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[Mueble Zapatero Sena - TopKit]]></language></meta_title>
+	<link_rewrite><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[mueble-zapatero-sena-10ab]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[sena-10ab-shoe-cupboard]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[scarpiera-messina-10ab-]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[mueble-zapatero-sena-10ab]]></language></link_rewrite>
+	<name><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[Mueble Zapatero Sena 10ab]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[Sena 10ab  Shoe Cupboard]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[Scarpiera Messina 10ab ]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[Mueble Zapatero Sena 10ab]]></language></name>
+	<description><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[<ul><li>Zapatero de 4 puertas </li>
+<li>Incluye sistyema de compas doble, lo que dobla la capacidad de almacenaje.</li>
+<li>Con tapa encimera y base de 30mms de grosor y puertas de 16mms.</li>
+<li>Tiradores metalicos de alta resistencia y trasera completa.</li>
+<li>Patas metálicas de regulacion en altura para evitar las irregularidades de los suelos.</li>
+<li>Esta fabricado en 30 y 16 mms de grosor y canto de PVC de 1mm.</li>
+</ul><p><strong>Material: </strong>Tablero aglomerado de alta densidad y melamina con gran resistencia al rayado</p>
+<p><strong>Tiempo de montaje:</strong> 25 minutos</p>
+<p><strong>Medidas y peso del mueble:</strong></p>
+<p><strong>Alto: </strong> 157 cm</p>
+<p><strong>Ancho: </strong>76 cm</p>
+<p><strong>Fondo: </strong>25 cm</p>
+<p><strong>Peso: </strong>35 kg</p>]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[<p>4 door Shoe Cupboard Includes dual compass system that allows you to double the storage area 30mm thickness top section and 16 mm doors High resistance metallic handles and complete rear section Height adjustable metallic legs for uneven floor surfaces Manufactured in 30/16mm thickness, with 1 mm PVC edges Requires assembly, required tools not included (screwdriver and hammer) does include Allen key</p>]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[<p>Scarpiera con 4 scomparti reclinabili. Include un sistema a doppio scompartimento che permette di raddoppiare lo spazio disponibile. Retro microperforato per garantire una migliore ventilazione. Le maniglie sono in metallo resistente e l'altezza delle gambe è regolabile per adattarsi alle irregolarità del suolo. Richiede montaggio, strumenti necessari non inclusi nel pacco (cacciavite e martello). Include brugola.</p>]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[<ul><li>Zapatero de 4 puertas </li>
+<li>Incluye sistyema de compas doble, lo que dobla la capacidad de almacenaje.</li>
+<li>Con tapa encimera y base de 30mms de grosor y puertas de 16mms.</li>
+<li>Tiradores metalicos de alta resistencia y trasera completa.</li>
+<li>Patas metálicas de regulacion en altura para evitar las irregularidades de los suelos.</li>
+<li>Esta fabricado en 30 y 16 mms de grosor y canto de PVC de 1mm.</li>
+</ul><p><strong>Material: </strong>Tablero aglomerado de alta densidad y melamina con gran resistencia al rayado</p>
+<p><strong>Tiempo de montaje:</strong> 25 minutos</p>
+<p><strong>Medidas y peso del mueble:</strong></p>
+<p><strong>Alto: </strong> 157 cm</p>
+<p><strong>Ancho: </strong>76 cm</p>
+<p><strong>Fondo: </strong>25 cm</p>
+<p><strong>Peso: </strong>35 kg</p>]]></language></description>
+	<description_short><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[<p>Zapatero de 4 puertas  Incluye sistyema de compas doble, lo que dobla la capacidad de almacenaje. Con tapa encimera y base de 30mms de grosor y puertas de 16mms. Tiradores metali...</p>]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[<p>4 door Shoe Cupboard Includes dual compass system that allows you to double the storage area 30mm thickness top section and 16 mm doors High resistance metallic handles and complete rear section...</p>]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[<p>Scarpiera con 4 scomparti reclinabili. Include un sistema a doppio scompartimento che permette di raddoppiare lo spazio disponibile. Retro microperforato per garantire una migliore ventilazione. ...</p>]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[<p>Zapatero de 4 puertas  Incluye sistyema de compas doble, lo que dobla la capacidad de almacenaje. Con tapa encimera y base de 30mms de grosor y puertas de 16mms. Tiradores metali...</p>]]></language></description_short>
+	<available_now><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[En stock]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[En stock]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[En stock]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[En stock]]></language></available_now>
+	<available_later><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[]]></language></available_later>
+	<guide><![CDATA[10AB.pdf]]></guide>
+	<video></video>
+	<mas_informacion><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[Zapatero de 4 puertas abatibles , Gran capacidad
+]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[High capacity 4 flip-top doors shoe cabinet]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[Zapatero de 4 puertas abatibles , Gran capacidad
+]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[Zapatero de 4 puertas abatibles , Gran capacidad
+]]></language></mas_informacion>
+	<especificaciones><language id="1" xlink:href="https://www.topkit.es/api/languages/1"><![CDATA[Material
+Tablero aglomerado de alta densidad y melamina con gran resistencia al rayado
+
+Capacidad
+27 pares
+
+Tiempo de montaje aprox (minutos)
+30
+]]></language><language id="5" xlink:href="https://www.topkit.es/api/languages/5"><![CDATA[Aprox. Setup time (minutes)30]]></language><language id="6" xlink:href="https://www.topkit.es/api/languages/6"><![CDATA[Materiale
+Truciolare alta densità e melammina ad elevata resistenza al graffio
+
+Capacità
+27 paia
+
+Tempo per il montaggio apross. (minuti)
+30
+]]></language><language id="8" xlink:href="https://www.topkit.es/api/languages/8"><![CDATA[Material
+Tablero aglomerado de alta densidad y melamina con gran resistencia al rayado
+
+Capacidad
+27 pares
+
+Tiempo de montaje aprox (minutos)
+30
+]]></language></especificaciones>
+<associations>
+<categories nodeType="category" api="categories">
+	<category xlink:href="https://www.topkit.es/api/categories/17">
+	<id><![CDATA[17]]></id>
+	</category>
+	<category xlink:href="https://www.topkit.es/api/categories/50">
+	<id><![CDATA[50]]></id>
+	</category>
+	<category xlink:href="https://www.topkit.es/api/categories/53">
+	<id><![CDATA[53]]></id>
+	</category>
+</categories>
+<images nodeType="image" api="images">
+	<image xlink:href="https://www.topkit.es/api/images/products/4/107">
+	<id><![CDATA[107]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/108">
+	<id><![CDATA[108]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/109">
+	<id><![CDATA[109]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/111">
+	<id><![CDATA[111]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/105">
+	<id><![CDATA[105]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/106">
+	<id><![CDATA[106]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/110">
+	<id><![CDATA[110]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/112">
+	<id><![CDATA[112]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/113">
+	<id><![CDATA[113]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/114">
+	<id><![CDATA[114]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/115">
+	<id><![CDATA[115]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/116">
+	<id><![CDATA[116]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/117">
+	<id><![CDATA[117]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/118">
+	<id><![CDATA[118]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/119">
+	<id><![CDATA[119]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/120">
+	<id><![CDATA[120]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/121">
+	<id><![CDATA[121]]></id>
+	</image>
+	<image xlink:href="https://www.topkit.es/api/images/products/4/122">
+	<id><![CDATA[122]]></id>
+	</image>
+</images>
+<combinations nodeType="combination" api="combinations">
+	<combination xlink:href="https://www.topkit.es/api/combinations/212">
+	<id><![CDATA[212]]></id>
+	</combination>
+	<combination xlink:href="https://www.topkit.es/api/combinations/213">
+	<id><![CDATA[213]]></id>
+	</combination>
+	<combination xlink:href="https://www.topkit.es/api/combinations/273">
+	<id><![CDATA[273]]></id>
+	</combination>
+</combinations>
+<product_option_values nodeType="product_option_value" api="product_option_values">
+	<product_option_value xlink:href="https://www.topkit.es/api/product_option_values/5">
+	<id><![CDATA[5]]></id>
+	</product_option_value>
+	<product_option_value xlink:href="https://www.topkit.es/api/product_option_values/2">
+	<id><![CDATA[2]]></id>
+	</product_option_value>
+	<product_option_value xlink:href="https://www.topkit.es/api/product_option_values/4">
+	<id><![CDATA[4]]></id>
+	</product_option_value>
+</product_option_values>
+<product_features nodeType="product_feature" api="product_features">
+	<product_feature xlink:href="https://www.topkit.es/api/product_features/8">
+	<id><![CDATA[8]]></id>
+	<id_feature_value xlink:href="https://www.topkit.es/api/product_feature_values/837"><![CDATA[837]]></id_feature_value>
+	</product_feature>
+</product_features>
+<tags nodeType="tag" api="tags"/>
+<stock_availables nodeType="stock_available" api="stock_availables">
+	<stock_available xlink:href="https://www.topkit.es/api/stock_availables/1250">
+	<id><![CDATA[1250]]></id>
+	<id_product_attribute><![CDATA[0]]></id_product_attribute>
+	</stock_available>
+	<stock_available xlink:href="https://www.topkit.es/api/stock_availables/1251">
+	<id><![CDATA[1251]]></id>
+	<id_product_attribute><![CDATA[212]]></id_product_attribute>
+	</stock_available>
+	<stock_available xlink:href="https://www.topkit.es/api/stock_availables/1252">
+	<id><![CDATA[1252]]></id>
+	<id_product_attribute><![CDATA[213]]></id_product_attribute>
+	</stock_available>
+	<stock_available xlink:href="https://www.topkit.es/api/stock_availables/1249">
+	<id><![CDATA[1249]]></id>
+	<id_product_attribute><![CDATA[273]]></id_product_attribute>
+	</stock_available>
+</stock_availables>
+<accessories nodeType="product" api="products"/>
+<product_bundle nodeType="product" api="products"/>
+</associations>
+</product>
+</prestashop>
+
