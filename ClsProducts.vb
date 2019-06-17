@@ -13,53 +13,57 @@ Public Class ClsProducts
 
     Public Function DameProcuctos() As List(Of String)
         ' ****  Obtenemos la lista de productos para irla recorriendo ****
-        Dim proc As New Product
 
+        Dim proc As New Product
         Dim Lista As New List(Of String)
 
-        Dim nodoraiz As XElement
-        'Dim Xml As String = DameXml(DirApi & "/products" & key)
-        Dim Xml As String = DameXml(DirApi & "/products" & key)
-        Dim doc As XElement = XElement.Parse(Xml)
-        nodoraiz = doc.Element("products")
-        Dim rfc As String
-        For Each v In nodoraiz.Elements("product")
-            rfc = v.Attribute("id").Value
-            Lista.Add(rfc)
-        Next
+        Try
+
+
+            Dim nodoraiz As XElement
+            'Dim Xml As String = DameXml(DirApi & "/products" & key)
+            Dim Xml As String = DameXml(DirApi & "/products" & key)
+            Dim doc As XElement = XElement.Parse(Xml)
+            nodoraiz = doc.Element("products")
+            Dim rfc As String
+            For Each v In nodoraiz.Elements("product")
+                rfc = v.Attribute("id").Value
+                Lista.Add(rfc)
+            Next
+        Catch ex As Exception
+            Dim ola As String = ""
+        End Try
 
         Return Lista
     End Function
 
     Public Sub Construye()
 
-
         Try
 
-
-
-
             Dim settings As XmlWriterSettings = New XmlWriterSettings()
-        Using writer As XmlWriter = XmlWriter.Create(Application.StartupPath & "\productsE.xml", settings)
+            Using writer As XmlWriter = XmlWriter.Create(Application.StartupPath & "\productsE.xml", settings)
 
-            settings.Indent = True ' Begin writing.
-            settings.IndentChars = vbTab
-            writer.WriteStartDocument()
-            writer.WriteStartElement("products") ' Root.
+                settings.Indent = True ' Begin writing.
+                settings.IndentChars = vbTab
+                writer.WriteStartDocument()
+                writer.WriteStartElement("products") ' Root.
 
 
-            '*************  OBTENEMOS LA LISTA DE ID DE LOS PRODUCTOS *********
-            Dim Productos As List(Of String) = DameProcuctos()
+                '*************  OBTENEMOS LA LISTA DE ID DE LOS PRODUCTOS *********
+                Dim Productos As List(Of String) = DameProcuctos()
 
-            Dim Cuantos As Integer = Productos.Count
+                Dim Cuantos As Integer = Productos.Count
+                '    FRM.IniciarProceso()
 
-            '*** Recorremos la lista de productos y vamos rellenando
-            ' writer.WriteStartElement("products")
-
-            For Each Pro In Productos
-                Dim Producto As New Product
-                Dim pasa As Boolean = Producto.DameProducto(Pro)
-                If pasa Then 'Si el producto ha pasado y no ha sido filtrado
+                '*** Recorremos la lista de productos y vamos rellenando
+                ' writer.WriteStartElement("products")
+                Dim n As Integer = 0
+                For Each Pro In Productos
+                    '  FRM.proc = n
+                    Dim Producto As New Product
+                    Dim pasa As Boolean = Producto.DameProducto(Pro)
+                    If pasa Then 'Si el producto ha pasado y no ha sido filtrado
 
                         'Primero el nodo proudctos
                         With writer
@@ -69,15 +73,50 @@ Public Class ClsProducts
 
                             ' Los datos del producto
                             .WriteElementString("ean13", Producto.ean)
-                            .WriteElementString("name", Producto.name)
+
+                            'nombres de los productos
+                            .WriteStartElement("name")
+                            Dim x As Integer = 1
+                            For Each na In Producto.name
+                                Select Case x
+                                    Case 1
+                                        .WriteElementString("español", na)
+                                    Case 2
+                                        .WriteElementString("ingles", na)
+                                    Case 3
+                                        .WriteElementString("italiano", na)
+                                    Case 4
+                                        .WriteElementString("frances", na)
+                                End Select
+                                x = x + 1
+                            Next
+
+                            .WriteEndElement()
+
+
                             .WriteElementString("quantity", Producto.quantity)
                             .WriteElementString("price", Producto.price)
                             .WriteElementString("rate", Producto.rate)
                             .WriteElementString("reference", Producto.reference)
 
-                            writer.WriteStartElement("description")
-                            writer.WriteCData(Producto.description)
-                            writer.WriteEndElement()
+
+                            'descripciones
+                            .WriteStartElement("description")
+                            .WriteStartElement("español")
+                            .WriteCData(Producto.description.Item(0))
+                            .WriteEndElement()
+                            .WriteStartElement("ingles")
+                            .WriteCData(Producto.description.Item(1))
+                            .WriteEndElement()
+                            .WriteStartElement("italiano")
+                            .WriteCData(Producto.description.Item(2))
+                            .WriteEndElement()
+                            .WriteStartElement("frances")
+                            .WriteCData(Producto.description.Item(3))
+                            .WriteEndElement()
+                            .WriteEndElement()
+
+
 
                             .WriteElementString("brand", Producto.brand)
 
@@ -96,19 +135,28 @@ Public Class ClsProducts
                             writer.WriteEndElement()
 
                             'Dimensiones de producto montado
+                            .WriteStartElement("packaging")
+                            If Producto.Logis.Count = 1 Then
+                                For Each t In Producto.Logis
+                                    .WriteElementString("height", t.height)
+                                    .WriteElementString("width", t.width)
+                                    .WriteElementString("depth", t.depth)
+                                    .WriteElementString("weight", t.weight)
+                                Next
+                            Else
+                                .WriteElementString("height", 0)
+                                .WriteElementString("width", 0)
+                                .WriteElementString("depth", 0)
+                                .WriteElementString("weight", 0)
+                            End If
+                            .WriteEndElement()
+
+                            'Packaging
                             .WriteStartElement("dimension")
                             .WriteElementString("height", Producto.heightM)
                             .WriteElementString("width", Producto.widthM)
                             .WriteElementString("depth", Producto.depthM)
                             .WriteElementString("weight", Producto.weightM)
-                            .WriteEndElement()
-
-                            'Packaging
-                            .WriteStartElement("packaging")
-                            .WriteElementString("height", 0)
-                            .WriteElementString("width", 0)
-                            .WriteElementString("depth", 0)
-                            .WriteElementString("weight", 0)
                             .WriteEndElement()
 
                             'features
@@ -145,16 +193,19 @@ Public Class ClsProducts
                         End With
                         writer.WriteEndElement()
                     End If
-
+                    n += 1
+                    '  FRM.o.Text = n
                 Next Pro
                 writer.WriteEndElement()
                 writer.WriteEndDocument()
-            writer.Flush()
+                writer.Flush()
 
-        End Using
+            End Using
         Catch ex As Exception
-        Dim ola As String = ""
+            Dim ola As String = ""
         End Try
+
+
     End Sub
 
     Public Function DameXml(ByVal Dir As String) As String

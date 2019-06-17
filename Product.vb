@@ -13,12 +13,12 @@ Public Class Product
 
     'DATOS DEL PRODUCTO
     Public ean As String
-    Public name As String
+    Public name As New List(Of String)
     Public quantity As String 'stock
     Public price As String
     Public rate As String
-    Public reference As String 'SKU
-    Public description As String
+    Public reference As String
+    Public description As New List(Of String)
     Public brand As String
 
     'VARIANTES (COMBINACIONES DE COLORES).
@@ -176,19 +176,72 @@ Public Class Product
 
     End Sub
 
-    Private Sub DameImagenes(ByVal doc As XElement)
+    Private Sub DameImagenes(ByVal doc As XElement, ByVal id As String)
         Dim valor As String
         Try
             Dim ima As IEnumerable(Of XElement) = doc.Elements()
             For Each imagen In ima.Descendants("image")
                 valor = CStr(imagen)
-                Dim url As String = DirApi & "/images/products/4/" & valor & keyI
+                Dim url As String = DirApi & "/images/products/" & id & "/" & valor & keyI
                 Imagenes.Add(url)
             Next imagen
         Catch ex As Exception
             Dim ola As String = ex.Message
         End Try
     End Sub
+
+    Private Sub DameDescripciones(ByVal doc As XElement)
+        Dim valor As String
+        Try
+            Dim ima As IEnumerable(Of XElement) = doc.Elements()
+            For Each des In ima.Descendants("description")
+                For Each t In des.Elements
+                    valor = CStr(t)
+                    description.Add(valor)
+                Next
+            Next
+        Catch ex As Exception
+            Dim ola As String = ex.Message
+        End Try
+    End Sub
+    Private Sub DameTitulos(ByVal xml As String)
+        Dim valor As String = ""
+        Try
+            Dim m_xmld As XmlDocument
+            Dim m_nodelist As XmlNodeList
+            Dim m_node As XmlNode
+
+
+            'Creamos el "Document"
+            m_xmld = New XmlDocument()
+
+            'Cargamos el archivo
+            m_xmld.LoadXml(xml)
+
+
+
+            'Obtenemos la lista de los nodos "name"
+            m_nodelist = m_xmld.SelectNodes("prestashop/product/name")
+
+            'Iniciamos el ciclo de lectura
+            For Each m_node In m_nodelist
+
+                valor = m_node.ChildNodes.Item(0).InnerText
+                name.Add(valor)
+                valor = m_node.ChildNodes.Item(1).InnerText
+                name.Add(valor)
+                valor = m_node.ChildNodes.Item(2).InnerText
+                name.Add(valor)
+                valor = m_node.ChildNodes.Item(3).InnerText
+                name.Add(valor)
+            Next
+        Catch ex As Exception
+            'Error trapping
+            Console.Write(ex.ToString())
+        End Try
+
+    End Sub
+
 
     Private Function DameListaVariantes(ByVal doc As XElement) As List(Of String)
         Dim lista As New List(Of String)
@@ -228,7 +281,7 @@ Public Class Product
 
         p.ean13 = DameValorL(doc, "ean13") 'El ean
         p.reference = DameValorL(doc, "reference") 'El ean
-        p.quantity = DameValorL(doc, "quantity")
+        p.quantity = DameStockVariante(id)
         p.name = "Color"
         Dim valor As String = ""
             Dim tests As IEnumerable(Of XElement) =
@@ -242,7 +295,16 @@ Public Class Product
         variantes.Add(p)
 
     End Sub
+    Private Function DameStockVariante(ByVal id As String) As String
+        Dim valor As String = "0"
+        Dim Xml As String = DameXml(DirApi & "/products/" & id & key)
 
+        Dim doc As XElement = XElement.Parse(Xml)
+
+        valor = DameStock(doc)
+        If String.IsNullOrEmpty(valor) Then valor = "0"
+        Return valor
+    End Function
     Private Sub DameVariantes(ByVal doc As XElement)
 
         Dim lista As List(Of String) = DameListaVariantes(doc)
@@ -285,10 +347,7 @@ Public Class Product
     Public Function DameProducto(ByVal id As String) As Boolean
 
         Dim Pasa As Boolean = False
-        If id = "1" Then
-            Dim olas As String = ""
 
-        End If
 
         Try
             ' Esto es para metodo de busqueda con link
@@ -328,12 +387,12 @@ Public Class Product
 
 
             ' name = DameValor(Application.StartupPath & "\producto.xml", "prestashop/product/meta_title")
-            name = DameValor(Xml, "prestashop/product/meta_title")
+            DameTitulos(Xml)
             quantity = DameStock(doc) 'El ean
             price = DameValorL(doc, "price") 'El ean
             rate = "21"
             reference = DameValorL(doc, "reference") 'El ean
-            description = DameValorL(doc, "description") 'El ean
+            DameDescripciones(doc) 'El ean
 
 
             '***** COGEMOS LOS DATOS DIMENSIONES DEL PRODUCTO MONTADO   ***********************
@@ -349,7 +408,7 @@ Public Class Product
             DameFeatures()
 
             '***** RELLENAMOS UNA LISTA CON LAS URL DE LAS IMAGENES Y LO DEJAMOS DISPONIBLE.
-            DameImagenes(doc)
+            DameImagenes(doc, id)
 
             '***** RELLENAMOS UNA LISTA CON LAS CATEGORIAS Y LO DEJAMOS DISPONIBLE.
             DameCategorias(doc)
@@ -397,8 +456,6 @@ Public Class Product
 
 
     End Function
-    Private Sub Carga()
 
-    End Sub
 
 End Class
