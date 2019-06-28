@@ -271,40 +271,37 @@ Public Class Product
 
         Return valor
     End Function
-    Private Sub DameVairante(ByVal id As String)
-
-        Dim Xml As String = DameXml(DirApi & "/combinations/" & id & key)
-
-        Dim doc As XElement = XElement.Parse(Xml)
-        Dim p As New Variante
+    Private Sub DameVairante(ByVal id As String, ByVal doc1 As XElement)
+        Try
 
 
-        p.ean13 = DameValorL(doc, "ean13") 'El ean
-        p.reference = DameValorL(doc, "reference") 'El ean
-        p.quantity = DameStockVariante(id)
-        p.name = "Color"
-        Dim valor As String = ""
+            Dim Xml As String = DameXml(DirApi & "/combinations/" & id & key)
+
+            Dim doc As XElement = XElement.Parse(Xml)
+            Dim p As New Variante
+
+
+            p.ean13 = DameValorL(doc, "ean13") 'El ean
+            p.reference = DameValorL(doc, "reference") 'El ean
+            p.quantity = DameStock(doc1, id)
+            p.name = "Color"
+            Dim valor As String = ""
             Dim tests As IEnumerable(Of XElement) =
             From el In doc...<product_option_value> Select el
 
             For Each ele As XElement In tests
                 valor = CStr(ele).ToString
             Next
-        p.value = DameColor(valor)
+            p.value = DameColor(valor)
 
-        variantes.Add(p)
+            variantes.Add(p)
+        Catch ex As Exception
+            Dim ola As String = ex.Message
+        End Try
 
     End Sub
-    Private Function DameStockVariante(ByVal id As String) As String
-        Dim valor As String = "0"
-        Dim Xml As String = DameXml(DirApi & "/products/" & id & key)
 
-        Dim doc As XElement = XElement.Parse(Xml)
 
-        valor = DameStock(doc)
-        If String.IsNullOrEmpty(valor) Then valor = "0"
-        Return valor
-    End Function
     Private Sub DameVariantes(ByVal doc As XElement)
 
         Dim lista As List(Of String) = DameListaVariantes(doc)
@@ -316,7 +313,7 @@ Public Class Product
                 For Each pro In lista
                     Dim val As String = pro
 
-                    DameVairante(val)
+                    DameVairante(val, doc)
                 Next
             End If
         Catch ex As Exception
@@ -326,17 +323,21 @@ Public Class Product
 
 
     End Sub
-    Private Function DameStock(ByVal doc As XElement) As String
-        Dim valor As String = ""
+    Private Function DameStock(ByVal doc As XElement, ByVal idv As String) As String
+        Dim valor As String = "0"
         Try
             Dim cate As IEnumerable(Of XElement) = doc.Elements()
             For Each stock In cate.Descendants("stock_available")
                 Dim id As String = stock.Element("id")
+                Dim o As String = stock.Element("id_product_attribute")
 
-                Dim x As String = DameXml(DirApi & "/stock_availables/" & id & key)
-                Dim d As XElement = XElement.Parse(x)
-                valor = DameValorL(d, "quantity")
-                Exit For
+                If o = idv Then
+                    Dim x As String = DameXml(DirApi & "/stock_availables/" & id & key)
+                    Dim d As XElement = XElement.Parse(x)
+                    valor = DameValorL(d, "quantity")
+                    Exit For
+                End If
+
             Next stock
         Catch ex As Exception
             Dim ola As String = ex.Message
@@ -355,6 +356,8 @@ Public Class Product
 
             Dim doc As XElement = XElement.Parse(Xml)
             _doc = doc
+
+
 
             Dim active As String, categoria As String = "", id_combi As String = ""
             ' DameDimensiones(doc)
@@ -388,10 +391,16 @@ Public Class Product
 
             ' name = DameValor(Application.StartupPath & "\producto.xml", "prestashop/product/meta_title")
             DameTitulos(Xml)
-            quantity = DameStock(doc) 'El ean
+            quantity = DameStock(doc, "0") 'El ean
             price = DameValorL(doc, "price") 'El ean
             rate = "21"
             reference = DameValorL(doc, "reference") 'El ean
+
+            If reference = "2010" Then
+                Dim ola As String = ""
+                ' Dim tu As String = DameStock(doc)
+            End If
+
             DameDescripciones(doc) 'El ean
 
 

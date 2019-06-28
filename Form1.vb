@@ -10,7 +10,7 @@ Public Class Form1
     Public cts As CancellationTokenSource
     Public WithEvents work As New System.ComponentModel.BackgroundWorker
 
-    Const destino As String = "ftp://ftp.cluster011.hosting.ovh.net/amazon"
+    Const destino As String = "ftp://ftp.cluster011.ovh.net/"
     Const user As String = "docshareuz-topkit"
     Const pass As String = "i5OEhgoe7gpVgKQ"
     Private fichero As String = Application.StartupPath & "\productsE.xml"
@@ -19,7 +19,16 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.work.WorkerSupportsCancellation = True
+        Try
+
+            '   Dim uri As String
+            '  Uri = destino & "/topkit.xml"
+            '  My.Computer.Network.UploadFile(fichero, Uri, user, pass)
+            'subirFichero()
+            Me.work.WorkerSupportsCancellation = True
+        Catch ex As Exception
+            Dim ola As String = ""
+        End Try
     End Sub
 
     Private Sub Work_DoWork(sender As System.Object, e As System.ComponentModel.DoWorkEventArgs) Handles work.DoWork
@@ -56,7 +65,7 @@ Public Class Form1
             ' MessageBox.Show("Seroducido un error durante la ejecución: " & e.Error.Message)
         Else
             Dim uri As String
-            uri = destino & "/products.xml"
+            uri = destino & "/topkit.xml"
             My.Computer.Network.UploadFile(fichero, uri, user, pass)
             Me.Panel1.Visible = False
             Me.Button1.Enabled = True
@@ -70,7 +79,7 @@ Public Class Form1
     Public Function subirFichero() As String
 
         Try
-            ' My.Computer.Network.UploadFile(fichero, "Servidor FTP y archivos", "Nombre de usuario", "contraseña")
+            'My.Computer.Network.UploadFile(fichero, "Servidor FTP y archivos", "Nombre de usuario", "contraseña")
 
             Dim infoFichero As New FileInfo(fichero)
 
